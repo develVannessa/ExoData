@@ -7,7 +7,7 @@ import multiprocessing  # stops exit fail on setup.py test
 
 kw = {}
 if sys.hexversion >= 0x03000000:
-    kw['use_2to3'] = False
+    kw['use_2to3'] = True
 
 here = os.path.abspath(os.path.dirname(__file__))
 
