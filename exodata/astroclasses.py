@@ -867,7 +867,7 @@ class Parameters(object):  # TODO would this subclassing dict be more preferable
                     name = self.params['name']
                 except KeyError:
                     name = 'Unnamed'
-                print('rejected duplicate {0}: {1} in {2}'.format(key, value, name))  # TODO: log rejected value
+                print(('rejected duplicate {0}: {1} in {2}'.format(key, value, name)))  # TODO: log rejected value
                 return False  # TODO Replace with exception
 
         else:  # If the key doesn't already exist and isn't rejected
@@ -890,7 +890,7 @@ class Parameters(object):  # TODO would this subclassing dict be more preferable
                 try:
                     value = float(value) * self._defaultUnits[key]
                 except:
-                    print('caught an error with {0} - {1}'.format(key, value))
+                    print(('caught an error with {0} - {1}'.format(key, value)))
             self.params[key] = value
 
 
@@ -1016,7 +1016,7 @@ class SpectralType(object):
         if classString == '' or classString == 'nan':
             return False
 
-        possNumbers = range(10)
+        possNumbers = list(range(10))
         possLType = ('III', 'II', 'Iab', 'Ia0', 'Ia', 'Ib', 'IV', 'V')  # in order of unique matches
 
         # remove spaces, remove slashes

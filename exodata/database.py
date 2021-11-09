@@ -51,15 +51,15 @@ class OECDatabase(object):
         searchName = compactString(name)
         returnDict = {}
 
-        for altname, planetObj in self._planetSearchDict.iteritems():
+        for altname, planetObj in self._planetSearchDict.items():
             if re.search(searchName, altname):
                 returnDict[planetObj.name] = planetObj
 
         if returnDict:
             if len(returnDict) == 1:
-                return returnDict.values()[0]
+                return list(returnDict.values())[0]
             else:
-                return returnDict.values()
+                return list(returnDict.values())
 
         else:
             return False

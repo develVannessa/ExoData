@@ -9,7 +9,7 @@ def test():
     import unittest
     from hypothesis import Settings, Verbosity
 
-    from tests import testsuite as _testsuite
+    from .tests import testsuite as _testsuite
     unittest.TextTestRunner(verbosity=2).run(_testsuite)
 
 # Exodata Imports

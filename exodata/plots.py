@@ -257,7 +257,7 @@ class _BaseDataPerClass(_AstroObjectFigs):  # hangover from ETLOS's multiple chi
         except KeyError:
             pass
 
-        plotData = list(zip(*resultsByClass.items()))  # (labels, ydata)
+        plotData = list(zip(*list(resultsByClass.items())))  # (labels, ydata)
 
         return plotData
 
@@ -607,8 +607,8 @@ class DiscoveryMethodByYear(object):
 
         discovery_years = self.setup_keys()
 
-        _year_list = np.array([year for year in discovery_years.keys() if year is not np.nan])
-        year_list = range(_year_list.min(), _year_list.max()+1)  # +1 needed as its < not <=
+        _year_list = np.array([year for year in list(discovery_years.keys()) if year is not np.nan])
+        year_list = list(range(_year_list.min(), _year_list.max()+1))  # +1 needed as its < not <=
 
         discovery_methods = {k:0 for k in self.methods_to_plot}
         plot_matrix = {k:discovery_methods.copy() for k in year_list}

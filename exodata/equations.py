@@ -37,7 +37,7 @@ parameters used is given below.
 * *mu* - mean molecular weight
 """
 
-from __future__ import division
+
 from numpy import sqrt, arcsin, sin, cos, log10, nan
 
 import numpy as np
